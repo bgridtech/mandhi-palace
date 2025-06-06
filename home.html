@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandi Palace - The Royal Taste of Authentic Mandi</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#FF6B35',secondary:'#C6A87D'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-section {
+            background-image: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('https://readdy.ai/api/search-image?query=A%20luxurious%20and%20appetizing%20chicken%20mandi%20dish%20served%20on%20a%20traditional%20platter%20with%20aromatic%20rice%2C%20tender%20chicken%20pieces%2C%20and%20garnished%20with%20nuts%20and%20herbs.%20The%20dish%20is%20photographed%20from%20above%20with%20soft%20golden%20lighting%20creating%20a%20warm%20glow.%20The%20background%20is%20simple%20and%20elegant%2C%20highlighting%20the%20rich%20colors%20and%20textures%20of%20the%20authentic%20Middle%20Eastern%20cuisine.&width=1600&height=900&seq=1&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+        .card-image {
+            height: 240px;
+            overflow: hidden;
+        }
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+        .card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .btn {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        input:focus {
+            outline: none;
+            border-color: #C6A87D;
+        }
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 70vh;
+            }
+            .card-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-white bg-opacity-95 shadow-sm z-50">
+        <div class="container mx-auto px-4 md:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-3xl font-['Pacifico'] text-secondary">Mandi Palace</a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="font-medium hover:text-secondary transition-colors">Home</a>
+                    <a href="#" class="font-medium hover:text-secondary transition-colors">Menu</a>
+                    <a href="#" class="font-medium hover:text-secondary transition-colors">About</a>
+                    <a href="#" class="font-medium hover:text-secondary transition-colors">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="hidden md:flex items-center justify-center bg-primary text-white px-6 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-opacity-90 transition-colors btn">
+                        Order Now
+                    </a>
+                    <button class="md:hidden w-10 h-10 flex items-center justify-center">
+                        <i class="ri-menu-line ri-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section w-full min-h-screen flex items-center justify-center pt-16">
+        <div class="container mx-auto px-4 md:px-6 py-16 md:py-24">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="playfair text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                    <span class="block text-secondary">The Royal Taste of</span>
+                    <span class="block mt-2">Authentic Mandi</span>
+                </h1>
+                <p class="text-gray-200 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+                    Experience the rich flavors of traditional Middle Eastern cuisine, prepared with authentic recipes and premium ingredients.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                    <a href="#" class="w-full sm:w-auto bg-white text-gray-800 px-8 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-gray-100 transition-colors btn">
+                        Pre-Book Table
+                    </a>
+                    <a href="#" class="w-full sm:w-auto bg-primary text-white px-8 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-opacity-90 transition-colors btn">
+                        Order Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Dishes Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12">
+                <h2 class="playfair text-secondary text-3xl md:text-4xl font-bold mb-4">Our Signature Dishes</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Discover our most popular authentic dishes, prepared with traditional recipes and premium ingredients.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Dish Card 1 -->
+                <div class="card bg-white rounded-lg border border-gray-100 overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="card-image">
+                        <img src="https://readdy.ai/api/search-image?query=A%20beautifully%20plated%20chicken%20mandi%20dish%20with%20fragrant%20yellow%20rice%20and%20tender%20chicken%20pieces.%20The%20dish%20is%20garnished%20with%20fresh%20herbs%20and%20nuts%2C%20served%20on%20an%20elegant%20traditional%20platter.%20The%20lighting%20is%20warm%20and%20inviting%2C%20highlighting%20the%20rich%20textures%20and%20colors%20of%20this%20Middle%20Eastern%20delicacy.%20The%20background%20is%20simple%20and%20clean%2C%20focusing%20attention%20on%20the%20food.&width=600&height=600&seq=2&orientation=squarish" alt="Chicken Mandi" class="object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="playfair text-secondary text-xl font-bold mb-2">Chicken Mandi</h3>
+                        <p class="text-gray-600 mb-4">Tender chicken slow-cooked with aromatic rice and our secret blend of spices.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-800 font-bold">$18.99</span>
+                            <a href="#" class="bg-primary text-white px-4 py-2 !rounded-button text-sm whitespace-nowrap hover:bg-opacity-90 transition-colors btn">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dish Card 2 -->
+                <div class="card bg-white rounded-lg border border-gray-100 overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="card-image">
+                        <img src="https://readdy.ai/api/search-image?query=A%20luxurious%20mutton%20mandi%20dish%20with%20tender%20pieces%20of%20mutton%20served%20on%20a%20bed%20of%20fragrant%20saffron-infused%20rice.%20The%20dish%20is%20garnished%20with%20toasted%20nuts%20and%20fresh%20herbs%2C%20presented%20on%20an%20elegant%20traditional%20platter.%20The%20lighting%20is%20warm%20and%20golden%2C%20highlighting%20the%20rich%20colors%20and%20textures%20of%20this%20Middle%20Eastern%20specialty.%20The%20background%20is%20simple%20and%20clean%2C%20focusing%20attention%20on%20the%20food.&width=600&height=600&seq=3&orientation=squarish" alt="Mutton Mandi" class="object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="playfair text-secondary text-xl font-bold mb-2">Mutton Mandi</h3>
+                        <p class="text-gray-600 mb-4">Succulent mutton slow-cooked to perfection with our signature mandi spice blend.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-800 font-bold">$22.99</span>
+                            <a href="#" class="bg-primary text-white px-4 py-2 !rounded-button text-sm whitespace-nowrap hover:bg-opacity-90 transition-colors btn">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dish Card 3 -->
+                <div class="card bg-white rounded-lg border border-gray-100 overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="card-image">
+                        <img src="https://readdy.ai/api/search-image?query=A%20refreshing%20display%20of%20colorful%20fresh%20fruit%20juices%20in%20elegant%20glass%20containers.%20The%20juices%20include%20vibrant%20orange%2C%20deep%20red%20pomegranate%2C%20bright%20yellow%20mango%2C%20and%20green%20mint%20lemonade.%20The%20glasses%20are%20garnished%20with%20fresh%20fruit%20slices%20and%20mint%20leaves.%20The%20lighting%20is%20bright%20and%20natural%2C%20highlighting%20the%20vivid%20colors%20of%20the%20juices.%20The%20background%20is%20simple%20and%20clean%2C%20focusing%20attention%20on%20the%20refreshing%20beverages.&width=600&height=600&seq=4&orientation=squarish" alt="Fresh Juices" class="object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="playfair text-secondary text-xl font-bold mb-2">Fresh Juices</h3>
+                        <p class="text-gray-600 mb-4">Refreshing selection of freshly squeezed fruit juices to complement your meal.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-800 font-bold">$5.99</span>
+                            <a href="#" class="bg-primary text-white px-4 py-2 !rounded-button text-sm whitespace-nowrap hover:bg-opacity-90 transition-colors btn">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dish Card 4 -->
+                <div class="card bg-white rounded-lg border border-gray-100 overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="card-image">
+                        <img src="https://readdy.ai/api/search-image?query=A%20tempting%20display%20of%20creamy%20milkshakes%20in%20tall%20glasses.%20The%20milkshakes%20include%20chocolate%20topped%20with%20whipped%20cream%20and%20chocolate%20shavings%2C%20strawberry%20garnished%20with%20fresh%20berries%2C%20and%20vanilla%20with%20caramel%20drizzle.%20The%20glasses%20are%20elegantly%20presented%20with%20decorative%20straws.%20The%20lighting%20is%20soft%20and%20inviting%2C%20highlighting%20the%20rich%20textures%20and%20colors%20of%20these%20indulgent%20treats.%20The%20background%20is%20simple%20and%20clean%2C%20focusing%20attention%20on%20the%20delicious%20shakes.&width=600&height=600&seq=5&orientation=squarish" alt="Milkshakes" class="object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="playfair text-secondary text-xl font-bold mb-2">Creamy Milkshakes</h3>
+                        <p class="text-gray-600 mb-4">Indulgent milkshakes made with premium ice cream and fresh ingredients.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-800 font-bold">$6.99</span>
+                            <a href="#" class="bg-primary text-white px-4 py-2 !rounded-button text-sm whitespace-nowrap hover:bg-opacity-90 transition-colors btn">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-white text-primary border border-primary px-8 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-primary hover:text-white transition-colors btn">
+                    View Full Menu
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://readdy.ai/api/search-image?query=An%20elegant%20restaurant%20interior%20with%20Middle%20Eastern%20design%20elements.%20The%20space%20features%20warm%20lighting%2C%20comfortable%20seating%20with%20plush%20cushions%2C%20ornate%20lanterns%20hanging%20from%20the%20ceiling%2C%20and%20traditional%20Arabian%20decor%20accents.%20The%20tables%20are%20set%20with%20fine%20dinnerware%2C%20and%20the%20ambiance%20is%20sophisticated%20yet%20welcoming.%20The%20color%20palette%20includes%20rich%20golds%2C%20deep%20reds%2C%20and%20warm%20wood%20tones%2C%20creating%20an%20authentic%20and%20luxurious%20dining%20atmosphere.&width=800&height=600&seq=6&orientation=landscape" alt="Restaurant Interior" class="rounded-lg shadow-lg w-full h-auto object-cover object-top">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="playfair text-secondary text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
+                    <p class="text-gray-600 mb-6">
+                        Founded in 2015, Mandi Palace brings the authentic flavors of Middle Eastern cuisine to your table. Our recipes have been passed down through generations, preserving the traditional cooking methods that make our dishes truly special.
+                    </p>
+                    <p class="text-gray-600 mb-8">
+                        We take pride in using only the freshest ingredients, premium spices, and traditional cooking techniques to create an unforgettable dining experience. Our chefs have trained in the heart of Yemen and Saudi Arabia to master the art of preparing the perfect Mandi.
+                    </p>
+                    <a href="#" class="inline-block bg-secondary text-white px-8 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-opacity-90 transition-colors btn">
+                        Learn More About Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12">
+                <h2 class="playfair text-secondary text-3xl md:text-4xl font-bold mb-4">What Our Customers Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Don't just take our word for it - hear what our valued customers have to say about their dining experience.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="text-secondary">
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"The Chicken Mandi here is absolutely divine! The rice is perfectly cooked and the chicken is so tender it falls off the bone. Definitely the most authentic Middle Eastern food I've had outside of Dubai."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mr-4">
+                            <i class="ri-user-3-line ri-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Michael Robertson</h4>
+                            <p class="text-gray-500 text-sm">Regular Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="text-secondary">
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"I ordered the Mutton Mandi for a family gathering and everyone was impressed! The flavors were rich and authentic, and the portion sizes were generous. The online ordering process was smooth and delivery was prompt."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mr-4">
+                            <i class="ri-user-3-line ri-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Sophia Martinez</h4>
+                            <p class="text-gray-500 text-sm">Family Celebration</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="text-secondary">
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-half-fill ri-lg"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"The ambiance of Mandi Palace is as impressive as the food. The decor transports you to the Middle East, and the service is impeccable. Their fresh juices are the perfect complement to the spiced dishes. A must-visit restaurant!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mr-4">
+                            <i class="ri-user-3-line ri-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">James Wilson</h4>
+                            <p class="text-gray-500 text-sm">Food Blogger</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-2/5 bg-secondary p-8 text-white">
+                        <h3 class="playfair text-2xl font-bold mb-4">Reserve Your Table</h3>
+                        <p class="mb-6">Book your table in advance to ensure availability and enjoy a seamless dining experience.</p>
+                        <div class="mb-6">
+                            <div class="flex items-center mb-3">
+                                <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                    <i class="ri-time-line ri-lg"></i>
+                                </div>
+                                <span>Mon - Fri: 11:00 AM - 10:00 PM</span>
+                            </div>
+                            <div class="flex items-center mb-3">
+                                <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                    <i class="ri-time-line ri-lg"></i>
+                                </div>
+                                <span>Sat - Sun: 10:00 AM - 11:00 PM</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                    <i class="ri-phone-line ri-lg"></i>
+                                </div>
+                                <span>+1 (555) 123-4567</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-3/5 p-8">
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label for="name" class="block text-gray-700 mb-2">Full Name</label>
+                                    <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-secondary" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
+                                    <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-secondary" placeholder="+1 (555) 123-4567">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label for="date" class="block text-gray-700 mb-2">Date</label>
+                                    <input type="date" id="date" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-secondary">
+                                </div>
+                                <div>
+                                    <label for="time" class="block text-gray-700 mb-2">Time</label>
+                                    <input type="time" id="time" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-secondary">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="guests" class="block text-gray-700 mb-2">Number of Guests</label>
+                                <select id="guests" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-secondary pr-8">
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 People</option>
+                                    <option value="3">3 People</option>
+                                    <option value="4">4 People</option>
+                                    <option value="5">5 People</option>
+                                    <option value="6+">6+ People</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 mb-2">Special Requests</label>
+                                <textarea id="message" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-secondary" placeholder="Any special requests or dietary requirements?"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-opacity-90 transition-colors btn">
+                                Confirm Reservation
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="playfair text-secondary text-3xl font-bold mb-4">Join Our Community</h2>
+                <p class="text-gray-600 mb-8">Subscribe to our newsletter to receive special offers, new menu updates, and exclusive invitations to our events.</p>
+                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 border border-gray-300 rounded-button focus:border-secondary">
+                    <button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-opacity-90 transition-colors btn">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <a href="#" class="text-3xl font-['Pacifico'] text-secondary mb-4 inline-block">Mandi Palace</a>
+                    <p class="text-gray-400 mb-6">Experience the authentic taste of Middle Eastern cuisine in an elegant and welcoming atmosphere.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="ri-facebook-fill ri-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="ri-instagram-line ri-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="ri-twitter-x-line ri-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="ri-youtube-line ri-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Menu</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Reservations</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center mr-3 mt-1">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span class="text-gray-400">123 Culinary Street, Foodie District, New York, NY 10001</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-6 h-6 flex items-center justify-center mr-3">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-6 h-6 flex items-center justify-center mr-3">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <span class="text-gray-400">info@mandipalace.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Opening Hours</h4>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between">
+                            <span class="text-gray-400">Monday - Friday</span>
+                            <span class="text-white">11:00 AM - 10:00 PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-400">Saturday</span>
+                            <span class="text-white">10:00 AM - 11:00 PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-400">Sunday</span>
+                            <span class="text-white">10:00 AM - 11:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Mandi Palace. All rights reserved.</p>
+                    <div class="flex items-center space-x-4">
+                        <a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const menuButton = document.querySelector('.ri-menu-line').parentElement;
+            const mobileMenu = document.createElement('div');
+            mobileMenu.className = 'fixed inset-0 bg-gray-900 bg-opacity-95 z-50 flex flex-col items-center justify-center transform translate-x-full transition-transform duration-300 ease-in-out';
+            mobileMenu.innerHTML = `
+                <button class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-white">
+                    <i class="ri-close-line ri-2x"></i>
+                </button>
+                <div class="flex flex-col items-center space-y-6 text-white text-xl">
+                    <a href="#" class="hover:text-secondary transition-colors">Home</a>
+                    <a href="#" class="hover:text-secondary transition-colors">Menu</a>
+                    <a href="#" class="hover:text-secondary transition-colors">About</a>
+                    <a href="#" class="hover:text-secondary transition-colors">Contact</a>
+                    <a href="#" class="mt-4 bg-primary text-white px-8 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-opacity-90 transition-colors">Order Now</a>
+                </div>
+            `;
+            document.body.appendChild(mobileMenu);
+            
+            menuButton.addEventListener('click', function() {
+                mobileMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            mobileMenu.querySelector('.ri-close-line').parentElement.addEventListener('click', function() {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            });
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (!mobileMenu.classList.contains('translate-x-full')) {
+                            mobileMenu.classList.add('translate-x-full');
+                            document.body.style.overflow = '';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

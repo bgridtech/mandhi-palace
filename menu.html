@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#FF6B35',secondary:'#C5A572'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #222222;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: #C5A572;
+        }
+        .menu-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .menu-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .order-btn {
+            transition: background-color 0.3s ease;
+        }
+        .order-btn:hover {
+            background-color: #e55a2a;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        @media (max-width: 640px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+    <header class="bg-white shadow-sm py-4 px-6 md:px-8 lg:px-12 sticky top-0 z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-3xl font-['Pacifico'] text-primary">logo</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">Home</a>
+                <a href="#" class="text-primary border-b-2 border-primary font-medium">Menu</a>
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">About</a>
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button class="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200">
+                    <i class="ri-search-line text-gray-700"></i>
+                </button>
+                <button class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 relative">
+                    <i class="ri-shopping-bag-line text-gray-700"></i>
+                    <span class="absolute -top-1 -right-1 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">3</span>
+                </button>
+                <button class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200">
+                    <i class="ri-menu-line text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        <div class="text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">Our Delicious Menu</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">Explore our carefully crafted dishes made with fresh ingredients and authentic recipes. Each item is prepared with love to bring you the best dining experience.</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-6 mb-10">
+            <button class="px-6 py-2 rounded-full bg-primary text-white font-medium whitespace-nowrap !rounded-button">All Items</button>
+            <button class="px-6 py-2 rounded-full bg-gray-100 text-gray-700 font-medium hover:bg-gray-200 whitespace-nowrap !rounded-button">Main Course</button>
+            <button class="px-6 py-2 rounded-full bg-gray-100 text-gray-700 font-medium hover:bg-gray-200 whitespace-nowrap !rounded-button">Appetizers</button>
+            <button class="px-6 py-2 rounded-full bg-gray-100 text-gray-700 font-medium hover:bg-gray-200 whitespace-nowrap !rounded-button">Beverages</button>
+            <button class="px-6 py-2 rounded-full bg-gray-100 text-gray-700 font-medium hover:bg-gray-200 whitespace-nowrap !rounded-button">Desserts</button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 menu-grid">
+            <!-- Chicken Mandi -->
+            <div class="menu-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://readdy.ai/api/search-image?query=Chicken%20Mandi%2C%20traditional%20Arabic%20rice%20dish%20with%20tender%20chicken%20pieces%2C%20served%20on%20a%20beautiful%20plate%20with%20garnish%2C%20high-quality%20food%20photography%2C%20soft%20natural%20lighting%2C%20restaurant%20setting%2C%20appetizing%20presentation%2C%20professional%20food%20styling&width=400&height=300&seq=1&orientation=landscape" alt="Chicken Mandi" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold text-secondary">Chicken Mandi</h3>
+                        <span class="font-bold text-gray-900">$18.95</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Traditional Arabic rice dish with tender chicken, aromatic spices, and saffron rice. Served with special sauce.</p>
+                    <button class="w-full py-2 bg-primary text-white font-medium !rounded-button order-btn whitespace-nowrap flex items-center justify-center">
+                        <i class="ri-restaurant-line mr-2"></i>
+                        Order to Table
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mango Shake -->
+            <div class="menu-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://readdy.ai/api/search-image?query=Refreshing%20mango%20shake%20in%20a%20tall%20glass%20with%20whipped%20cream%20on%20top%2C%20mango%20slices%20as%20garnish%2C%20condensation%20on%20glass%2C%20vibrant%20yellow-orange%20color%2C%20straw%2C%20restaurant%20setting%2C%20soft%20natural%20lighting%2C%20appetizing%20presentation&width=400&height=300&seq=2&orientation=landscape" alt="Mango Shake" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold text-secondary">Mango Shake</h3>
+                        <span class="font-bold text-gray-900">$6.50</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Refreshing blend of ripe mangoes, milk, and vanilla ice cream. Topped with whipped cream and mango chunks.</p>
+                    <button class="w-full py-2 bg-primary text-white font-medium !rounded-button order-btn whitespace-nowrap flex items-center justify-center">
+                        <i class="ri-restaurant-line mr-2"></i>
+                        Order to Table
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grilled Salmon -->
+            <div class="menu-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://readdy.ai/api/search-image?query=Perfectly%20grilled%20salmon%20fillet%20with%20crispy%20skin%2C%20served%20with%20roasted%20vegetables%2C%20lemon%20wedge%2C%20and%20herb%20garnish%20on%20an%20elegant%20white%20plate%2C%20restaurant%20quality%20presentation%2C%20soft%20natural%20lighting%2C%20appetizing%20presentation&width=400&height=300&seq=3&orientation=landscape" alt="Grilled Salmon" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold text-secondary">Grilled Salmon</h3>
+                        <span class="font-bold text-gray-900">$22.95</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Fresh Atlantic salmon fillet grilled to perfection. Served with seasonal vegetables and lemon herb sauce.</p>
+                    <button class="w-full py-2 bg-primary text-white font-medium !rounded-button order-btn whitespace-nowrap flex items-center justify-center">
+                        <i class="ri-restaurant-line mr-2"></i>
+                        Order to Table
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tiramisu -->
+            <div class="menu-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://readdy.ai/api/search-image?query=Classic%20tiramisu%20dessert%20with%20layers%20of%20coffee-soaked%20ladyfingers%20and%20mascarpone%20cream%2C%20dusted%20with%20cocoa%20powder%2C%20served%20on%20an%20elegant%20dessert%20plate%2C%20mint%20garnish%2C%20restaurant%20setting%2C%20soft%20natural%20lighting%2C%20appetizing%20presentation&width=400&height=300&seq=4&orientation=landscape" alt="Tiramisu" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold text-secondary">Tiramisu</h3>
+                        <span class="font-bold text-gray-900">$8.95</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream, dusted with cocoa powder.</p>
+                    <button class="w-full py-2 bg-primary text-white font-medium !rounded-button order-btn whitespace-nowrap flex items-center justify-center">
+                        <i class="ri-restaurant-line mr-2"></i>
+                        Order to Table
+                    </button>
+                </div>
+            </div>
+
+            <!-- Vegetable Biryani -->
+            <div class="menu-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://readdy.ai/api/search-image?query=Vegetable%20biryani%20with%20colorful%20mixed%20vegetables%2C%20fragrant%20basmati%20rice%2C%20and%20aromatic%20spices%2C%20garnished%20with%20fried%20onions%20and%20fresh%20herbs%2C%20served%20in%20a%20traditional%20bowl%2C%20restaurant%20setting%2C%20soft%20natural%20lighting%2C%20appetizing%20presentation&width=400&height=300&seq=5&orientation=landscape" alt="Vegetable Biryani" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold text-secondary">Vegetable Biryani</h3>
+                        <span class="font-bold text-gray-900">$14.50</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Fragrant basmati rice cooked with mixed vegetables, aromatic spices, and herbs. Served with raita and papadum.</p>
+                    <button class="w-full py-2 bg-primary text-white font-medium !rounded-button order-btn whitespace-nowrap flex items-center justify-center">
+                        <i class="ri-restaurant-line mr-2"></i>
+                        Order to Table
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chocolate Lava Cake -->
+            <div class="menu-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://readdy.ai/api/search-image?query=Chocolate%20lava%20cake%20with%20molten%20center%20flowing%20out%20when%20cut%2C%20served%20with%20vanilla%20ice%20cream%2C%20fresh%20berries%2C%20and%20mint%20garnish%2C%20dusted%20with%20powdered%20sugar%2C%20on%20an%20elegant%20dessert%20plate%2C%20restaurant%20setting%2C%20soft%20natural%20lighting%2C%20appetizing%20presentation&width=400&height=300&seq=6&orientation=landscape" alt="Chocolate Lava Cake" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold text-secondary">Chocolate Lava Cake</h3>
+                        <span class="font-bold text-gray-900">$9.95</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Warm chocolate cake with a molten center, served with vanilla ice cream and fresh berries.</p>
+                    <button class="w-full py-2 bg-primary text-white font-medium !rounded-button order-btn whitespace-nowrap flex items-center justify-center">
+                        <i class="ri-restaurant-line mr-2"></i>
+                        Order to Table
+                    </button>
+                </div>
+            </div>
+
+            <!-- Shrimp Pasta -->
+            <div class="menu-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://readdy.ai/api/search-image?query=Creamy%20shrimp%20pasta%20with%20large%20succulent%20shrimp%2C%20fettuccine%20noodles%2C%20cherry%20tomatoes%2C%20and%20fresh%20herbs%2C%20served%20in%20an%20elegant%20bowl%2C%20parmesan%20cheese%20garnish%2C%20restaurant%20setting%2C%20soft%20natural%20lighting%2C%20appetizing%20presentation&width=400&height=300&seq=7&orientation=landscape" alt="Shrimp Pasta" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold text-secondary">Shrimp Pasta</h3>
+                        <span class="font-bold text-gray-900">$19.95</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Fettuccine pasta tossed with succulent shrimp in a creamy garlic sauce. Garnished with parmesan and fresh herbs.</p>
+                    <button class="w-full py-2 bg-primary text-white font-medium !rounded-button order-btn whitespace-nowrap flex items-center justify-center">
+                        <i class="ri-restaurant-line mr-2"></i>
+                        Order to Table
+                    </button>
+                </div>
+            </div>
+
+            <!-- Strawberry Cheesecake -->
+            <div class="menu-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://readdy.ai/api/search-image?query=Creamy%20strawberry%20cheesecake%20with%20graham%20cracker%20crust%2C%20topped%20with%20fresh%20strawberry%20slices%20and%20strawberry%20sauce%2C%20mint%20garnish%2C%20served%20on%20an%20elegant%20dessert%20plate%2C%20restaurant%20setting%2C%20soft%20natural%20lighting%2C%20appetizing%20presentation&width=400&height=300&seq=8&orientation=landscape" alt="Strawberry Cheesecake" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold text-secondary">Strawberry Cheesecake</h3>
+                        <span class="font-bold text-gray-900">$8.50</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Creamy New York style cheesecake topped with fresh strawberry compote and whipped cream.</p>
+                    <button class="w-full py-2 bg-primary text-white font-medium !rounded-button order-btn whitespace-nowrap flex items-center justify-center">
+                        <i class="ri-restaurant-line mr-2"></i>
+                        Order to Table
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-center mt-12">
+            <button class="px-8 py-3 border border-primary text-primary font-medium hover:bg-primary hover:text-white transition-colors !rounded-button whitespace-nowrap">Load More Items</button>
+        </div>
+    </main>
+
+    <footer class="bg-gray-50 py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <a href="#" class="text-3xl font-['Pacifico'] text-primary mb-4 inline-block">logo</a>
+                    <p class="text-gray-600 mt-2">Serving authentic cuisine with a modern twist since 2010. Join us for an unforgettable dining experience.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white text-gray-600 transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white text-gray-600 transition-colors">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white text-gray-600 transition-colors">
+                            <i class="ri-twitter-x-line"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-secondary">Opening Hours</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex justify-between">
+                            <span>Monday - Friday</span>
+                            <span>11:00 AM - 10:00 PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Saturday</span>
+                            <span>10:00 AM - 11:00 PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sunday</span>
+                            <span>10:00 AM - 9:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-secondary">Contact Us</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span>123 Culinary Street, Foodville, NY 10001</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <span>info@restaurant.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-secondary">Newsletter</h4>
+                    <p class="text-gray-600 mb-4">Subscribe to our newsletter for special offers and updates.</p>
+                    <form class="flex flex-col space-y-3">
+                        <input type="email" placeholder="Your email address" class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <button type="submit" class="px-4 py-2 bg-primary text-white font-medium !rounded-button whitespace-nowrap">Subscribe Now</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-600 text-sm">© 2025 Restaurant Name. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-600 hover:text-primary text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-600 hover:text-primary text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-600 hover:text-primary text-sm">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

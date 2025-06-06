@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandi Palace Fun Zone</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#FF8C00',secondary:'#FFD700'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFFFFF;
+            color: #000000;
+            padding-bottom: 70px;
+        }
+        .game-card {
+            transition: transform 0.3s ease;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+        }
+        .news-tab.active {
+            color: #FF8C00;
+            border-bottom: 2px solid #FF8C00;
+        }
+        .news-content {
+            display: none;
+        }
+        .news-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="w-[375px] mx-auto min-h-[762px]">
+    <!-- Header Section -->
+    <header class="pt-8 pb-6 px-4 text-center">
+        <h1 class="font-['Pacifico'] text-3xl text-secondary mb-2">Welcome to the Mandi Fun Zone!</h1>
+        <p class="text-base text-gray-800">Enjoy while we prepare your feast</p>
+    </header>
+
+    <!-- Games Grid Section -->
+    <section class="px-4 mb-8">
+        <h2 class="text-xl font-semibold mb-4 text-secondary">Games to Play</h2>
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Game 1 -->
+            <div class="game-card bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://readdy.ai/api/search-image?query=word%20game%20app%20interface%20with%20colorful%20letters%2C%20minimalist%20design%2C%20clean%20UI%2C%20mobile%20game%20screen%2C%20word%20prediction%20game%2C%20isolated%20on%20white%20background%2C%20centered%20composition&width=180&height=120&seq=1&orientation=landscape" alt="Word Mandi" class="w-full h-24 object-cover object-top">
+                <div class="p-3">
+                    <h3 class="text-secondary font-medium text-sm">Word Mandi</h3>
+                    <p class="text-xs text-gray-600 mb-2 h-8">Predict the next word in famous food quotes</p>
+                    <button class="w-full bg-primary text-white py-1.5 text-xs font-medium !rounded-button cursor-pointer flex items-center justify-center">
+                        <i class="ri-gamepad-line mr-1"></i> Play Now
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Game 2 -->
+            <div class="game-card bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://readdy.ai/api/search-image?query=jigsaw%20puzzle%20game%20with%20Indian%20food%20platter%2C%20colorful%20spices%20and%20dishes%2C%20mobile%20game%20interface%2C%20puzzle%20pieces%20visible%2C%20clean%20UI%20design%2C%20isolated%20on%20white%20background%2C%20centered%20composition&width=180&height=120&seq=2&orientation=landscape" alt="Spice Puzzle" class="w-full h-24 object-cover object-top">
+                <div class="p-3">
+                    <h3 class="text-secondary font-medium text-sm">Spice Puzzle</h3>
+                    <p class="text-xs text-gray-600 mb-2 h-8">Solve the jigsaw of a delicious mandi platter</p>
+                    <button class="w-full bg-primary text-white py-1.5 text-xs font-medium !rounded-button cursor-pointer flex items-center justify-center">
+                        <i class="ri-puzzle-line mr-1"></i> Play Now
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Game 3 -->
+            <div class="game-card bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://readdy.ai/api/search-image?query=memory%20card%20matching%20game%20with%20fruit%20juice%20glasses%2C%20colorful%20drink%20cards%2C%20mobile%20game%20screen%2C%20memory%20match%20interface%2C%20clean%20UI%20design%2C%20isolated%20on%20white%20background%2C%20centered%20composition&width=180&height=120&seq=3&orientation=landscape" alt="Juice Flip" class="w-full h-24 object-cover object-top">
+                <div class="p-3">
+                    <h3 class="text-secondary font-medium text-sm">Juice Flip</h3>
+                    <p class="text-xs text-gray-600 mb-2 h-8">Match pairs of exotic juice flavors</p>
+                    <button class="w-full bg-primary text-white py-1.5 text-xs font-medium !rounded-button cursor-pointer flex items-center justify-center">
+                        <i class="ri-refresh-line mr-1"></i> Play Now
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Game 4 -->
+            <div class="game-card bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://readdy.ai/api/search-image?query=quiz%20game%20interface%20with%20Indian%20food%20and%20culture%20theme%2C%20question%20and%20multiple%20choice%20answers%2C%20mobile%20game%20screen%2C%20colorful%20UI%2C%20isolated%20on%20white%20background%2C%20centered%20composition&width=180&height=120&seq=4&orientation=landscape" alt="Quiz Time" class="w-full h-24 object-cover object-top">
+                <div class="p-3">
+                    <h3 class="text-secondary font-medium text-sm">Quiz Time</h3>
+                    <p class="text-xs text-gray-600 mb-2 h-8">Test your knowledge of Indian food & culture</p>
+                    <button class="w-full bg-primary text-white py-1.5 text-xs font-medium !rounded-button cursor-pointer flex items-center justify-center">
+                        <i class="ri-question-line mr-1"></i> Play Now
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Game 5 -->
+            <div class="game-card bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://readdy.ai/api/search-image?query=prize%20wheel%20spinner%20game%2C%20fortune%20wheel%20with%20food%20discounts%20and%20rewards%2C%20colorful%20segments%2C%20mobile%20game%20interface%2C%20clean%20UI%20design%2C%20isolated%20on%20white%20background%2C%20centered%20composition&width=180&height=120&seq=5&orientation=landscape" alt="Spin the Mandi" class="w-full h-24 object-cover object-top">
+                <div class="p-3">
+                    <h3 class="text-secondary font-medium text-sm">Spin the Mandi</h3>
+                    <p class="text-xs text-gray-600 mb-2 h-8">Spin for discounts, jokes, and surprises</p>
+                    <button class="w-full bg-primary text-white py-1.5 text-xs font-medium !rounded-button cursor-pointer flex items-center justify-center">
+                        <i class="ri-loop-right-line mr-1"></i> Play Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="px-4 mb-20">
+        <h2 class="text-xl font-semibold mb-4 text-secondary">Today's News</h2>
+        
+        <!-- Language Tabs -->
+        <div class="flex overflow-x-auto mb-4 pb-2">
+            <button class="news-tab active whitespace-nowrap px-4 py-2 text-sm font-medium" data-lang="english">English</button>
+            <button class="news-tab whitespace-nowrap px-4 py-2 text-sm font-medium" data-lang="hindi">Hindi</button>
+            <button class="news-tab whitespace-nowrap px-4 py-2 text-sm font-medium" data-lang="tamil">Tamil</button>
+            <button class="news-tab whitespace-nowrap px-4 py-2 text-sm font-medium" data-lang="telugu">Telugu</button>
+            <button class="news-tab whitespace-nowrap px-4 py-2 text-sm font-medium" data-lang="malayalam">Malayalam</button>
+        </div>
+        
+        <!-- News Content -->
+        <div class="bg-gray-50 rounded-lg p-4">
+            <!-- English News -->
+            <div id="english-news" class="news-content active">
+                <div class="mb-3 pb-3 border-b border-gray-200">
+                    <h3 class="text-sm font-medium">New Study Reveals Health Benefits of Traditional Spices</h3>
+                    <p class="text-xs text-gray-500 mt-1">May 6, 2025 • 2 hours ago</p>
+                </div>
+                <div class="mb-3 pb-3 border-b border-gray-200">
+                    <h3 class="text-sm font-medium">Local Chef Wins International Culinary Competition</h3>
+                    <p class="text-xs text-gray-500 mt-1">May 6, 2025 • 4 hours ago</p>
+                </div>
+                <div class="mb-3 pb-3 border-b border-gray-200">
+                    <h3 class="text-sm font-medium">Food Festival to Celebrate Regional Cuisines Next Month</h3>
+                    <p class="text-xs text-gray-500 mt-1">May 6, 2025 • 6 hours ago</p>
+                </div>
+                <div class="mb-3 pb-3 border-b border-gray-200">
+                    <h3 class="text-sm font-medium">Sustainable Farming Practices Gaining Popularity Among Youth</h3>
+                    <p class="text-xs text-gray-500 mt-1">May 6, 2025 • 8 hours ago</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-medium">New Restaurant Chain Focusing on Authentic Regional Dishes</h3>
+                    <p class="text-xs text-gray-500 mt-1">May 6, 2025 • 10 hours ago</p>
+                </div>
+            </div>
+            
+            <!-- Hindi News -->
+            <div id="hindi-news" class="news-content">
+                <div class="mb-3 pb-3 border-b border-gray-200">
+                    <h3 class="text-sm font-medium">पारंपरिक मसालों के स्वास्थ्य लाभों का खुलासा करता नया अध्ययन</h3>
+                    <p class="text-xs text-gray-500 mt-1">6 मई, 2025 • 3 घंटे पहले</p>
+                </div>
+                <div class="mb-3 pb-3 border-b border-gray-200">
+                    <h3 class="text-sm font-medium">स्थानीय शेफ ने जीती अंतरराष्ट्रीय पाक प्रतियोगिता</h3>
+                    <p class="text-xs text-gray-500 mt-1">6 मई, 2025 • 5 घंटे पहले</p>
+                </div>
+                <div class="mb-3 pb-3 border-b border-gray-200">
+                    <h3 class="text-sm font-medium">अगले महीने क्षेत्रीय व्यंजनों का जश्न मनाने के लिए फूड फेस्टिवल</h3>
+                    <p class="text-xs text-gray-500 mt-1">6 मई, 2025 • 7 घंटे पहले</p>
+                </div>
+                <div class="mb-3 pb-3 border-b border-gray-200">
+                    <h3 class="text-sm font-medium">युवाओं के बीच लोकप्रियता हासिल कर रही हैं टिकाऊ खेती प्रथाएं</h3>
+                    <p class="text-xs text-gray-500 mt-1">6 मई, 2025 • 9 घंटे पहले</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-medium">प्रामाणिक क्षेत्रीय व्यंजनों पर केंद्रित नई रेस्तरां श्रृंखला</h3>
+                    <p class="text-xs text-gray-500 mt-1">6 मई, 2025 • 11 घंटे पहले</p>
+                </div>
+            </div>
+            
+            <!-- Tamil News -->
+            <div id="tamil-news" class="news-content">
+                <div class="mb-3 pb-3 border-b border-gray-200">
+                    <h3 class="text-sm font-medium">பாரம்பரிய மசாலாக்களின் சுகாதார நன்மைகளை வெளிப்படுத்தும் புதிய ஆய்வு</h3>
+                    <p class="text-xs text-gray-500 mt-1">மே 6, 2025 • 2 மணி நேரத்திற்கு முன்</p>
+                </div>
+                <div class="mb-3 pb-3 border-b border-gray-200">
+                    <h3 class="text-sm font-medium">உள்ளூர் சமையல்காரர் சர்வதேச சமையல் போட்டியில் வெற்றி</h3>
+                    <p class="text-xs text-gray-500 mt-1">மே 6, 2025 • 4 மணி நேரத்திற்கு முன்</p>
+                </div>
+                <div class="mb-3 pb-3 border-b border-gray-200">
+                    <h3 class="text-sm font-medium">அடுத்த மாதம் பிராந்திய உணவுகளைக் கொண்டாடும் உணவு திருவிழா</h3>
+                    <p class="text-xs text-gray-500 mt-1">மே 6, 2025 • 6 மணி நேரத்திற்கு முன்</p>
+                </div>
+                <div class="mb-3 pb-3 border-b border-gray-200">
+                    <h3 class="text-sm font-medium">இளைஞர்களிடையே பிரபலமடைந்து வரும் நிலையான விவசாய நடைமுறைகள்</h3>
+                    <p class="text-xs text-gray-500 mt-1">மே 6, 2025 • 8 மணி நேரத்திற்கு முன்</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-medium">உண்மையான பிராந்திய உணவுகளில் கவனம் செலுத்தும் புதிய உணவகத் தொடர்</h3>
+                    <p class="text-xs text-gray-500 mt-1">மே 6, 2025 • 10 மணி நேரத்திற்கு முன்</p>
+                </div>
+            </div>
+            
+            <!-- Telugu News -->
+            <div id="telugu-news" class="news-content">
+                <div class="mb-3 pb-3 border-b border-gray-200">
+                    <h3 class="text-sm font-medium">సాంప్రదాయ మసాలాల ఆరోగ్య ప్రయోజనాలను వెల్లడించిన కొత్త అధ్యయనం</h3>
+                    <p class="text-xs text-gray-500 mt-1">మే 6, 2025 • 2 గంటల క్రితం</p>
+                </div>
+                <div class="mb-3 pb-3 border-b border-gray-200">
+                    <h3 class="text-sm font-medium">స్థానిక వంటగాడు అంతర్జాతీయ వంట పోటీలో విజయం సాధించాడు</h3>
+                    <p class="text-xs text-gray-500 mt-1">మే 6, 2025 • 4 గంటల క్రితం</p>
+                </div>
+                <div class="mb-3 pb-3 border-b border-gray-200">
+                    <h3 class="text-sm font-medium">వచ్చే నెలలో ప్రాంతీయ వంటకాలను జరుపుకునే ఫుడ్ ఫెస్టివల్</h3>
+                    <p class="text-xs text-gray-500 mt-1">మే 6, 2025 • 6 గంటల క్రితం</p>
+                </div>
+                <div class="mb-3 pb-3 border-b border-gray-200">
+                    <h3 class="text-sm font-medium">యువత మధ్య జనాదరణ పొందుతున్న సుస్థిర వ్యవసాయ పద్ధతులు</h3>
+                    <p class="text-xs text-gray-500 mt-1">మే 6, 2025 • 8 గంటల క్రితం</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-medium">అసలైన ప్రాంతీయ వంటకాలపై దృష్టి పెట్టిన కొత్త రెస్టారెంట్ చైన్</h3>
+                    <p class="text-xs text-gray-500 mt-1">మే 6, 2025 • 10 గంటల క్రితం</p>
+                </div>
+            </div>
+            
+            <!-- Malayalam News -->
+            <div id="malayalam-news" class="news-content">
+                <div class="mb-3 pb-3 border-b border-gray-200">
+                    <h3 class="text-sm font-medium">പരമ്പരാഗത സുഗന്ധവ്യഞ്ജനങ്ങളുടെ ആരോഗ്യ ഗുണങ്ങൾ വെളിപ്പെടുത്തുന്ന പുതിയ പഠനം</h3>
+                    <p class="text-xs text-gray-500 mt-1">മേയ് 6, 2025 • 2 മണിക്കൂർ മുമ്പ്</p>
+                </div>
+                <div class="mb-3 pb-3 border-b border-gray-200">
+                    <h3 class="text-sm font-medium">പ്രാദേശിക പാചകക്കാരൻ അന്താരാഷ്ട്ര പാചക മത്സരത്തിൽ വിജയിച്ചു</h3>
+                    <p class="text-xs text-gray-500 mt-1">മേയ് 6, 2025 • 4 മണിക്കൂർ മുമ്പ്</p>
+                </div>
+                <div class="mb-3 pb-3 border-b border-gray-200">
+                    <h3 class="text-sm font-medium">അടുത്ത മാസം പ്രാദേശിക ഭക്ഷണങ്ങൾ ആഘോഷിക്കാനുള്ള ഭക്ഷണ ഉത്സവം</h3>
+                    <p class="text-xs text-gray-500 mt-1">മേയ് 6, 2025 • 6 മണിക്കൂർ മുമ്പ്</p>
+                </div>
+                <div class="mb-3 pb-3 border-b border-gray-200">
+                    <h3 class="text-sm font-medium">യുവാക്കൾക്കിടയിൽ ജനപ്രിയമാകുന്ന സുസ്ഥിര കൃഷി രീതികൾ</h3>
+                    <p class="text-xs text-gray-500 mt-1">മേയ് 6, 2025 • 8 മണിക്കൂർ മുമ്പ്</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-medium">തനതായ പ്രാദേശിക വിഭവങ്ങളിൽ ശ്രദ്ധ കേന്ദ്രീകരിക്കുന്ന പുതിയ റെസ്റ്റോറന്റ് ശൃംഖല</h3>
+                    <p class="text-xs text-gray-500 mt-1">മേയ് 6, 2025 • 10 മണിക്കൂർ മുമ്പ്</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <div class="fixed bottom-0 left-0 w-full bg-white shadow-lg flex z-10">
+        <button class="flex-1 py-4 bg-primary text-white font-medium !rounded-none cursor-pointer flex items-center justify-center">
+            <i class="ri-arrow-left-line mr-2"></i> Back to Menu
+        </button>
+        <button class="flex-1 py-4 bg-primary text-white font-medium !rounded-none cursor-pointer flex items-center justify-center">
+            Order More <i class="ri-arrow-right-line ml-2"></i>
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.news-tab');
+            const contents = document.querySelectorAll('.news-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const lang = tab.getAttribute('data-lang');
+                    
+                    // Remove active class from all tabs and contents
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding content
+                    tab.classList.add('active');
+                    document.getElementById(`${lang}-news`).classList.add('active');
+                });
+            });
+            
+            // Game card hover effect
+            const gameCards = document.querySelectorAll('.game-card');
+            gameCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const button = this.querySelector('button');
+                    if (button) {
+                        button.classList.add('bg-opacity-80');
+                        setTimeout(() => {
+                            button.classList.remove('bg-opacity-80');
+                        }, 200);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
